@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-base: #040508;
+    --color-bg-surface: #07080d;
+    --color-accent-cyan: #00f0ff;
+    --color-accent-blue: #0070f3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #040508;
+  }
+
+  body {
+    background-color: #040508;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  /* Custom minimal futuristic scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07080d;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e2638;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f0ff;
+  }
+}
+
+/* Glassmorphism utility helpers */
+.glass-panel {
+  background: rgba(11, 14, 23, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-border {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px -5px rgba(0, 240, 255, 0.25);
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
